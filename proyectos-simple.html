@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Editor de proyectos · Cat-Not-Furry</title>
+	<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+		.editor-panel { background: var(--bg-secondary); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 2rem; }
+		.editor-panel h2 { margin-bottom: 1rem; font-size: 1.25rem; }
+		.editor-form { display: grid; gap: 1rem; max-width: 600px; }
+		.editor-form label { font-weight: 500; display: block; }
+		.editor-form input, .editor-form textarea, .editor-form select { padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: var(--bg-primary); color: var(--text-primary); width: 100%; }
+		.editor-actions { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+		.export-zone { margin-top: 1rem; }
+		.export-zone textarea { width: 100%; min-height: 200px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; border-radius: 6px; background: var(--bg-primary); color: var(--text-primary); border: 1px solid rgba(255,255,255,0.2); }
+		.card-actions { position: absolute; top: 0.5rem; right: 0.5rem; z-index: 2; }
+		.card-actions button { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+		#projects-container .project-card { position: relative; }
+		.editor-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+		@media (max-width: 900px) { .editor-form-row { grid-template-columns: 1fr; } }
+		.preview-zone { min-width: 0; }
+		.preview-zone__title { font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary); }
+		.preview-card-wrapper { min-height: 200px; }
+		.preview-card-wrapper .project-card { opacity: 1; transform: none; }
+		.preview-placeholder { color: var(--text-secondary); font-size: 0.9rem; font-style: italic; }
+		.export-help { margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; }
+		.export-help--muted { margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.9; }
+		.export-command-wrap { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 0.75rem 0; padding: 0.75rem; background: var(--bg-primary); border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); }
+		.export-command { font-family: var(--font-mono); font-size: 0.85rem; flex: 1; min-width: 200px; }
+		.btn--sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="container header__container">
+			<a href="index.html" class="header__logo">Cat-Not-Furry</a>
+			<div class="header__right">
+				<nav class="nav">
+					<ul class="nav__list">
+						<li><a href="index.html" class="nav__link">Inicio</a></li>
+						<li><a href="pages/about.html" class="nav__link">Sobre mí</a></li>
+						<li><a href="pages/contact.html" class="nav__link">Contacto</a></li>
+					</ul>
+				</nav>
+				<button type="button" class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/oscuro">
+				<svg class="theme-toggle__icon theme-toggle__icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+				<svg class="theme-toggle__icon theme-toggle__icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="projects">
+			<div class="container">
+				<div class="editor-panel">
+					<h2>Importar desde JSON</h2>
+					<p style="margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Pega el contenido de <code>projects.json</code> para cargar o reemplazar las tarjetas.</p>
+					<textarea id="import-json" rows="4" placeholder='[{"id":"...","titulo":"...",...}]' style="width:100%;padding:0.5rem;font-family:var(--font-mono);font-size:0.85rem;border-radius:6px;background:var(--bg-primary);color:var(--text-primary);border:1px solid rgba(255,255,255,0.2);margin-bottom:0.5rem;"></textarea>
+					<button type="button" class="btn btn--tech" id="btn-import">Cargar JSON</button>
+				</div>
+
+				<div class="editor-panel editor-panel--form">
+					<h2 id="form-title">Añadir proyecto</h2>
+					<div class="editor-form-row">
+						<form id="project-form" class="editor-form">
+						<div>
+							<label for="titulo">Título</label>
+							<input type="text" id="titulo" name="titulo" required placeholder="ej: hud_overlay">
+						</div>
+						<div>
+							<label for="subtitulo">Subtítulo</label>
+							<input type="text" id="subtitulo" name="subtitulo" required placeholder="ej: Fightstick Visualizer">
+						</div>
+						<div>
+							<label for="category">Categoría</label>
+							<select id="category" name="category">
+								<option value="gaming">Gaming</option>
+								<option value="dev">Dev</option>
+							</select>
+						</div>
+						<div>
+							<label for="icon">Icono (opcional)</label>
+							<select id="icon" name="icon">
+								<option value="">Ninguno</option>
+								<option value="gamepad-2">gamepad-2</option>
+								<option value="terminal">terminal</option>
+								<option value="cpu">cpu</option>
+								<option value="code">code</option>
+								<option value="box">box</option>
+								<option value="monitor">monitor</option>
+							</select>
+						</div>
+						<div>
+							<label for="color">Color (hex)</label>
+							<input type="text" id="color" name="color" value="#ff3b9d" placeholder="#ff3b9d">
+						</div>
+						<div>
+							<label for="descripcion">Descripción</label>
+							<textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+						</div>
+						<div>
+							<label for="tecnologias">Tecnologías (una por línea)</label>
+							<textarea id="tecnologias" name="tecnologias" rows="3" placeholder="Python&#10;Pygame&#10;Linux"></textarea>
+						</div>
+						<div>
+							<label for="caracteristicas">Características (una por línea)</label>
+							<textarea id="caracteristicas" name="caracteristicas" rows="4" placeholder="Modo torneo&#10;Soporte Hitbox"></textarea>
+						</div>
+						<div>
+							<label for="repo">URL Repositorio</label>
+							<input type="url" id="repo" name="repo" required placeholder="https://github.com/...">
+						</div>
+						<div>
+							<label for="docs">URL Documentación (opcional)</label>
+							<input type="url" id="docs" name="docs" placeholder="https://github.com/.../wiki">
+						</div>
+						<div class="editor-actions">
+							<button type="submit" class="btn btn--tech" id="btn-submit">Añadir tarjeta</button>
+							<button type="button" class="btn btn--tech" id="btn-cancel-edit" style="display:none;">Cancelar edición</button>
+						</div>
+					</form>
+					<div class="preview-zone">
+						<h3 class="preview-zone__title">Vista previa</h3>
+						<div id="preview-card-wrapper" class="preview-card-wrapper">
+							<p class="preview-placeholder">La vista previa aparecerá al rellenar el formulario.</p>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<h2 class="section-title">Proyectos destacados</h2>
+				<div class="projects__grid" id="projects-container">
+					<!-- Tarjetas cargadas desde JSON o añadidas por formulario -->
+				</div>
+
+				<div class="editor-panel export-zone">
+					<h2>Exportar a JSON</h2>
+					<p class="export-help">
+						1) Haz clic en <strong>Descargar projects.json</strong> para guardar el archivo.<br>
+						2) En la raíz del proyecto, ejecuta el script pasando la ruta al archivo descargado:
+					</p>
+					<div class="export-command-wrap">
+						<code id="export-command" class="export-command">node scripts/update-projects.js ~/Downloads/projects.json</code>
+						<button type="button" class="btn btn--tech btn--sm" id="btn-copy-command" title="Copiar comando">Copiar comando</button>
+					</div>
+					<p class="export-help export-help--muted">El script copia el JSON a <code>data/projects.json</code>. Ajusta la ruta si descargaste en otra ubicación.</p>
+					<div class="editor-actions">
+						<button type="button" class="btn btn--cyber" id="btn-export">Generar JSON</button>
+						<button type="button" class="btn btn--tech" id="btn-copy">Copiar JSON al portapapeles</button>
+						<button type="button" class="btn btn--tech" id="btn-download">Descargar projects.json</button>
+					</div>
+					<textarea id="json-output" readonly placeholder="Haz clic en 'Generar JSON' para ver el contenido"></textarea>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container footer__container">
+			<p>© 2026 Cat-Not-Furry · Todos los proyectos bajo licencia GPL v3</p>
+			<p>Hecho con 🕹️ y 🐧 para la comunidad</p>
+		</div>
+	</footer>
+
+	<script type="module" src="js/editor.js"></script>
+</body>
+</html>

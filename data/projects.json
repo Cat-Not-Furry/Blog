@@ -1,0 +1,93 @@
+[
+  {
+    "id": "hud-overlay",
+    "titulo": "hud_overlay",
+    "icon": "gamepad-2",
+    "category": "gaming",
+    "subtitulo": "Fightstick Visualizer",
+    "descripcion": "Overlay gráfico para visualizar entradas de joystick arcade en tiempo real. Perfecto para tutoriales, streams y entrenamiento.",
+    "color": "#ff3b9d",
+    "tecnologias": [
+      "Python",
+      "Pygame",
+      "Linux"
+    ],
+    "caracteristicas": [
+      "Modo torneo (bajo consumo de CPU)",
+      "Soporte para Hitbox y Mixbox",
+      "Grabación y reproducción de inputs",
+      "Exportación/Importación de perfiles en ZIP"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/joystick_overlay"
+    }
+  },
+  {
+    "id": "arch-opt",
+    "titulo": "ARCH-OPT",
+    "icon": "cpu",
+    "category": "dev",
+    "subtitulo": "Optimización y scripts útiles",
+    "descripcion": "Configuraciones y documentación para mejorar el rendimiento de ordenadores de dos décadas de antigüedad ejecutando Arch Linux.",
+    "color": "#a3ff8f",
+    "tecnologias": [
+      "Shell",
+      "Linux",
+      "Systemd"
+    ],
+    "caracteristicas": [
+      "Guías paso a paso",
+      "Scripts de optimización automática",
+      "Compatibilidad con equipos de bajos recursos"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/arch-opt"
+    }
+  },
+  {
+    "id": "orange-pi",
+    "titulo": "Orange-pi",
+    "subtitulo": "Transmisión",
+    "category": "dev",
+    "icon": "monitor",
+    "color": "#ff7333",
+    "descripcion": "Streaming de video y GPS desde Orange Pi hacia laptop. El host se encarga de grabar y mostrar vídeo, mientras que el cliente se limita a transmitir.",
+    "tecnologias": [
+      "Python",
+      "Opencv",
+      "Psutil",
+      "Pyopenssl"
+    ],
+    "caracteristicas": [
+      "Utiliza HTTP (Protocolo de Transferencia de HiperTexto)",
+      "Utiliza TCP (Protocolo de Control de Transmisión)",
+      "Guarda coordenadas para Gps en formato trayectoria_$date_$time.gpx"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/Orange-pi"
+    }
+  },
+  {
+    "id": "hud-owerlay",
+    "titulo": "hud_owerlay",
+    "subtitulo": "Fightstick Visualizer",
+    "category": "gaming",
+    "icon": "gamepad-2",
+    "color": "#ff3b9d",
+    "descripcion": "Overlay gráfico para visualizar entradas de joystick arcade en tiempo real. Perfecto para tutoriales, streams y entrenamiento.",
+    "tecnologias": [
+      "Python",
+      "Pygame",
+      "Windows"
+    ],
+    "caracteristicas": [
+      "Modo torneo (bajo consumo de CPU)",
+      "Soporte para Hitbox y Mixbox",
+      "Grabación y reproducción de inputs",
+      "Exportación/Importación de perfiles en ZIP"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/joystick_owerlay"
+    }
+  }
+]

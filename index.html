@@ -1,1 +1,103 @@
-<h1>Anuncios</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat-Not-Furry · Proyectos</title>
+    <meta name="description" content="Herramientas y scripts open-source.">
+    <meta name="author" content="Cat-Not-Furry">
+    <meta name="keywords" content="fightstick, overlay, linux, windows, optimización, arch linux, code, tools">
+    
+    <!-- Open Graph (para compartir en redes) -->
+    <meta property="og:title" content="Cat-Not-Furry · Proyectos">
+    <meta property="og:description" content="Herramientas y scripts open-source">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cat-not-furry.github.io">
+    <meta property="og:image" content="https://cat-not-furry.github.io/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cat-Not-Furry · Proyectos">
+    <meta name="twitter:description" content="Herramientas y scripts open-source.">
+    <meta name="twitter:image" content="https://cat-not-furry.github.io/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="Cat-Not-Furry - Proyectos open-source.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header incluido vía JavaScript -->
+    <div id="header"></div>
+
+    <main>
+        <section class="hero gaming-section">
+            <div class="container">
+                <h1 class="hero__title">Creando herramientas y scripts de nicho</h1>
+                <p class="hero__subtitle">Desarrollo software open-source para el disfute del usuario de nicho y no tan de nicho.</p>
+                <a href="#proyectos" class="btn btn--tech">Ver proyectos</a>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects">
+            <div class="container">
+                <h2 class="section-title">Proyectos destacados</h2>
+                <p id="projects-updated" class="projects-updated" aria-live="polite"></p>
+                <div class="project-filters">
+                    <button type="button" class="filter-btn btn btn--tech active" data-category="all">Todos</button>
+                    <button type="button" class="filter-btn btn btn--tech" data-category="gaming">Gaming</button>
+                    <button type="button" class="filter-btn btn btn--tech" data-category="dev">Dev</button>
+                </div>
+                <div class="projects__grid" id="projects-container">
+                    <!-- Se carga dinámicamente desde data/projects.json -->
+                    <div class="loading">Cargando proyectos...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Comentarios</h2>
+                <div class="testimonials__grid">
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__quote">"AI void a descargarlo, xd"</p>
+                        <footer class="testimonial-card__footer">
+                            <cite class="testimonial-card__author">@mayortom4815</cite>
+                            <span class="testimonial-card__project">hud_overlay</span>
+                        </footer>
+                    </blockquote>
+                    <!---<blockquote class="testimonial-card">
+                        <p class="testimonial-card__quote">"Reviví mi PC de 2005 con Arch y las guías de ARCH-OPT. Ahora corre navegador y ofimática sin problemas."</p>
+                        <footer class="testimonial-card__footer">
+                            <cite class="testimonial-card__author">Usuario de la comunidad</cite>
+                            <span class="testimonial-card__project">ARCH-OPT</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__quote">"La grabación de inputs me ayudó a analizar mis combos y mejorar mi Hitbox. Herramienta imprescindible para entrenar."</p>
+                        <footer class="testimonial-card__footer">
+                            <cite class="testimonial-card__author">Jugador competitivo</cite>
+                            <span class="testimonial-card__project">hud_overlay</span>
+                        </footer>
+                    </blockquote>--->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer incluido vía JavaScript -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

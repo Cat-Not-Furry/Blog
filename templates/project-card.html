@@ -1,0 +1,22 @@
+<article class="project-card" style="--project-color: {{color}};">
+  <div class="project-icon">{{icono}}</div>
+  <h3 class="project-title">{{titulo}}</h3>
+  <h4 class="project-subtitle">{{subtitulo}}</h4>
+  <p class="project-description">{{descripcion}}</p>
+  <div class="project-tech">
+    {{#tecnologias}}
+    <span class="tech-tag">{{.}}</span>
+    {{/tecnologias}}
+  </div>
+  <ul class="project-features">
+    {{#caracteristicas}}
+    <li>{{.}}</li>
+    {{/caracteristicas}}
+  </ul>
+  <div class="project-links">
+    {{#enlaces}}
+    <a href="{{repo}}" class="button">Repositorio</a>
+    <a href="{{docs}}" class="button">Documentación</a>
+    {{/enlaces}}
+  </div>
+</article>
