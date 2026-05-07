@@ -1,7 +1,7 @@
 [
   {
-    "id": "hud-overlay",
-    "titulo": "hud_overlay",
+    "id": "joystick-overlay",
+    "titulo": "Joystick_Overlay",
     "icon": "gamepad-2",
     "category": "gaming",
     "subtitulo": "Fightstick Visualizer",
@@ -23,8 +23,8 @@
     }
   },
   {
-    "id": "arch-opt",
-    "titulo": "ARCH-OPT",
+    "id": "scripts-installer",
+    "titulo": "Scripts-Installer",
     "icon": "cpu",
     "category": "dev",
     "subtitulo": "Optimización y scripts útiles",
@@ -45,8 +45,8 @@
     }
   },
   {
-    "id": "hud-owerlay",
-    "titulo": "hud_owerlay",
+    "id": "joystick-owerlay",
+    "titulo": "Joystick_Owerlay",
     "subtitulo": "Fightstick Visualizer",
     "category": "gaming",
     "icon": "gamepad-2",
