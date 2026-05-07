@@ -41,30 +41,7 @@
       "Compatibilidad con equipos de bajos recursos"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/arch-opt"
-    }
-  },
-  {
-    "id": "orange-pi",
-    "titulo": "Orange-pi",
-    "subtitulo": "Transmisión",
-    "category": "dev",
-    "icon": "monitor",
-    "color": "#ff7333",
-    "descripcion": "Streaming de video y GPS desde Orange Pi hacia laptop. El host se encarga de grabar y mostrar vídeo, mientras que el cliente se limita a transmitir.",
-    "tecnologias": [
-      "Python",
-      "Opencv",
-      "Psutil",
-      "Pyopenssl"
-    ],
-    "caracteristicas": [
-      "Utiliza HTTP (Protocolo de Transferencia de HiperTexto)",
-      "Utiliza TCP (Protocolo de Control de Transmisión)",
-      "Guarda coordenadas para Gps en formato trayectoria_$date_$time.gpx"
-    ],
-    "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/Orange-pi"
+      "repo": "https://github.com/Cat-Not-Furry/Scripts-Installer"
     }
   },
   {
