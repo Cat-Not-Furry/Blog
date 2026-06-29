@@ -1,7 +1,7 @@
 [
   {
-    "id": "joystick-overlay",
-    "titulo": "Joystick_Overlay",
+    "id": "hud-overlay",
+    "titulo": "hud_overlay",
     "icon": "gamepad-2",
     "category": "gaming",
     "subtitulo": "Fightstick Visualizer",
@@ -19,12 +19,12 @@
       "Exportación/Importación de perfiles en ZIP"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/joystick_overlay"
+      "repo": "https://github.com/Cat-Not-Furry/hud_overlay"
     }
   },
   {
-    "id": "scripts-installer",
-    "titulo": "Scripts-Installer",
+    "id": "arch-opt",
+    "titulo": "ARCH-OPT",
     "icon": "cpu",
     "category": "dev",
     "subtitulo": "Optimización y scripts útiles",
@@ -41,12 +41,35 @@
       "Compatibilidad con equipos de bajos recursos"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/Scripts-Installer"
+      "repo": "https://github.com/Cat-Not-Furry/arch-opt"
     }
   },
   {
-    "id": "joystick-owerlay",
-    "titulo": "Joystick_Owerlay",
+    "id": "orange-pi",
+    "titulo": "Orange-pi",
+    "subtitulo": "Transmisión",
+    "category": "dev",
+    "icon": "monitor",
+    "color": "#ff7333",
+    "descripcion": "Streaming de video y GPS desde Orange Pi hacia laptop. El host se encarga de grabar y mostrar vídeo, mientras que el cliente se limita a transmitir.",
+    "tecnologias": [
+      "Python",
+      "Opencv",
+      "Psutil",
+      "Pyopenssl"
+    ],
+    "caracteristicas": [
+      "Utiliza HTTP (Protocolo de Transferencia de HiperTexto)",
+      "Utiliza TCP (Protocolo de Control de Transmisión)",
+      "Guarda coordenadas para Gps en formato trayectoria_$date_$time.gpx"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/Orange-pi"
+    }
+  },
+  {
+    "id": "hud-owerlay",
+    "titulo": "hud_owerlay",
     "subtitulo": "Fightstick Visualizer",
     "category": "gaming",
     "icon": "gamepad-2",
@@ -64,7 +87,7 @@
       "Exportación/Importación de perfiles en ZIP"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/joystick_owerlay"
+      "repo": "https://github.com/Cat-Not-Furry/hud_owerlay"
     }
   }
 ]
