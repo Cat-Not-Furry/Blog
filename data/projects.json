@@ -1,17 +1,13 @@
 [
   {
-    "id": "hud-overlay",
-    "titulo": "hud_overlay",
+    "id": "joystick-overlay",
+    "titulo": "Joystick_Overlay",
     "icon": "gamepad-2",
     "category": "gaming",
     "subtitulo": "Fightstick Visualizer",
     "descripcion": "Overlay gráfico para visualizar entradas de joystick arcade en tiempo real. Perfecto para tutoriales, streams y entrenamiento.",
     "color": "#ff3b9d",
-    "tecnologias": [
-      "Python",
-      "Pygame",
-      "Linux"
-    ],
+    "tecnologias": ["Python", "Pygame", "Linux"],
     "caracteristicas": [
       "Modo torneo (bajo consumo de CPU)",
       "Soporte para Hitbox y Mixbox",
@@ -19,67 +15,36 @@
       "Exportación/Importación de perfiles en ZIP"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/hud_overlay"
+      "repo": "https://github.com/Cat-Not-Furry/joystick_overlay"
     }
   },
   {
-    "id": "arch-opt",
-    "titulo": "ARCH-OPT",
+    "id": "scripts-installer",
+    "titulo": "Scripts-Installer",
     "icon": "cpu",
     "category": "dev",
     "subtitulo": "Optimización y scripts útiles",
     "descripcion": "Configuraciones y documentación para mejorar el rendimiento de ordenadores de dos décadas de antigüedad ejecutando Arch Linux.",
     "color": "#a3ff8f",
-    "tecnologias": [
-      "Shell",
-      "Linux",
-      "Systemd"
-    ],
+    "tecnologias": ["Shell", "Linux", "Systemd"],
     "caracteristicas": [
       "Guías paso a paso",
       "Scripts de optimización automática",
       "Compatibilidad con equipos de bajos recursos"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/arch-opt"
+      "repo": "https://github.com/Cat-Not-Furry/Scripts-Installer"
     }
   },
   {
-    "id": "orange-pi",
-    "titulo": "Orange-pi",
-    "subtitulo": "Transmisión",
-    "category": "dev",
-    "icon": "monitor",
-    "color": "#ff7333",
-    "descripcion": "Streaming de video y GPS desde Orange Pi hacia laptop. El host se encarga de grabar y mostrar vídeo, mientras que el cliente se limita a transmitir.",
-    "tecnologias": [
-      "Python",
-      "Opencv",
-      "Psutil",
-      "Pyopenssl"
-    ],
-    "caracteristicas": [
-      "Utiliza HTTP (Protocolo de Transferencia de HiperTexto)",
-      "Utiliza TCP (Protocolo de Control de Transmisión)",
-      "Guarda coordenadas para Gps en formato trayectoria_$date_$time.gpx"
-    ],
-    "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/Orange-pi"
-    }
-  },
-  {
-    "id": "hud-owerlay",
-    "titulo": "hud_owerlay",
+    "id": "joystick-owerlay",
+    "titulo": "Joystick_Owerlay",
     "subtitulo": "Fightstick Visualizer",
     "category": "gaming",
     "icon": "gamepad-2",
     "color": "#ff3b9d",
     "descripcion": "Overlay gráfico para visualizar entradas de joystick arcade en tiempo real. Perfecto para tutoriales, streams y entrenamiento.",
-    "tecnologias": [
-      "Python",
-      "Pygame",
-      "Windows"
-    ],
+    "tecnologias": ["Python", "Pygame", "Windows"],
     "caracteristicas": [
       "Modo torneo (bajo consumo de CPU)",
       "Soporte para Hitbox y Mixbox",
@@ -87,7 +52,43 @@
       "Exportación/Importación de perfiles en ZIP"
     ],
     "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/hud_owerlay"
+      "repo": "https://github.com/Cat-Not-Furry/joystick_owerlay"
+    }
+  },
+  {
+    "id": "waybar-auto-hide",
+    "titulo": "Waybar Auto Hide",
+    "subtitulo": "Waybar-Auto-Hide-CNF (Custom No Fork)",
+    "category": "dev",
+    "icon": "terminal",
+    "color": "#1f3b9d",
+    "descripcion": "Compilado que oculta Waybar hecho en Rust",
+    "tecnologias": ["Rust", "CSS", "Waybar", "Bash", "Wayland"],
+    "caracteristicas": [
+      "Funciona como el proyecto original de Zephirus2 solo que añade la opción de poder mostrar la barra cuando esta vacio el espacio de trabajo.",
+      "Se implementa de forma natural con stack hyprland+waybar",
+      "Release listo aqui:",
+      "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf/releases/tag/v0.4.0"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf"
+    }
+  },
+  {
+    "id": "waybar-auto-hide",
+    "titulo": "Waybar Auto Hide",
+    "subtitulo": "Waybar-Auto-Hide-CNF (Custom No Fork)",
+    "category": "dev",
+    "icon": "monitor",
+    "color": "#1f3b9d",
+    "descripcion": "Funciona como el proyecto original de Zephirus2, con la diferencia que se muestra automáticamente al estar vacio el espacio de trabajo.",
+    "tecnologias": ["Rust", "CSS", "SCSS", "Waybar", "Wayland"],
+    "caracteristicas": [
+      "Lanzamiento aquí:",
+      "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf/releases/tag/v0.4.0"
+    ],
+    "enlaces": {
+      "repo": "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf"
     }
   }
 ]
