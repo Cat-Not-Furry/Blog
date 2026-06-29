@@ -73,22 +73,5 @@
     "enlaces": {
       "repo": "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf"
     }
-  },
-  {
-    "id": "waybar-auto-hide",
-    "titulo": "Waybar Auto Hide",
-    "subtitulo": "Waybar-Auto-Hide-CNF (Custom No Fork)",
-    "category": "dev",
-    "icon": "monitor",
-    "color": "#1f3b9d",
-    "descripcion": "Funciona como el proyecto original de Zephirus2, con la diferencia que se muestra automáticamente al estar vacio el espacio de trabajo.",
-    "tecnologias": ["Rust", "CSS", "SCSS", "Waybar", "Wayland"],
-    "caracteristicas": [
-      "Lanzamiento aquí:",
-      "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf/releases/tag/v0.4.0"
-    ],
-    "enlaces": {
-      "repo": "https://github.com/Cat-Not-Furry/waybar-auto-hide-cnf"
-    }
   }
 ]
